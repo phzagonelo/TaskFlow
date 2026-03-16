@@ -29,11 +29,11 @@ export function TaskList({ tasks, isLoading, filter, onStatusChange }: TaskListP
     return (
       <Empty
         icon={ListTodoIcon}
-        title="Nenhuma tarefa encontrada"
+        title="No tasks found"
         description={
           filter === 'all'
-            ? 'Crie uma nova tarefa para começar.'
-            : `Nenhuma tarefa com status "${filter === 'pending' ? 'Pendente' : filter === 'in_progress' ? 'Em Progresso' : 'Concluída'}".`
+            ? 'Create a new task to get started.'
+            : `No tasks with status "${filter === 'pending' ? 'Pending' : filter === 'in_progress' ? 'In Progress' : 'Completed'}".`
         }
       />
     )

@@ -39,7 +39,7 @@ export default function LoginPage() {
       })
       login(response.token, response.user_id, response.username)
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Falha ao fazer login')
+      setError(err instanceof Error ? err.message : 'Failed to log in')
     } finally {
       setIsSubmitting(false)
     }
@@ -68,20 +68,20 @@ export default function LoginPage() {
 
       <Card className="w-full max-w-md border-border/50 bg-card">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl">Entrar</CardTitle>
+          <CardTitle className="text-2xl">Sign In</CardTitle>
           <CardDescription>
-            Acesse sua conta para gerenciar suas tarefas
+            Access your account to manage your tasks
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit}>
             <FieldGroup>
               <Field>
-                <FieldLabel htmlFor="email">E-mail</FieldLabel>
+                <FieldLabel htmlFor="email">Email</FieldLabel>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="seu@email.com"
+                  placeholder="your@email.com"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -91,11 +91,11 @@ export default function LoginPage() {
                 />
               </Field>
               <Field>
-                <FieldLabel htmlFor="password">Senha</FieldLabel>
+                <FieldLabel htmlFor="password">Password</FieldLabel>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Digite sua senha"
+                  placeholder="Enter your password"
                   value={formData.password}
                   onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
@@ -120,14 +120,14 @@ export default function LoginPage() {
               ) : (
                 <LogInIcon className="size-4" />
               )}
-              {isSubmitting ? 'Entrando...' : 'Entrar'}
+              {isSubmitting ? 'Signing in...' : 'Sign In'}
             </Button>
           </form>
         </CardContent>
       </Card>
 
       <p className="mt-6 text-center text-sm text-muted-foreground">
-        Ainda não tem conta? Contate o administrador.
+        {"Don't have an account? Contact the administrator."}
       </p>
     </div>
   )

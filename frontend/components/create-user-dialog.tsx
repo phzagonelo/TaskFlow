@@ -52,23 +52,23 @@ export function CreateUserDialog() {
       <DialogTrigger asChild>
         <Button variant="outline" className="gap-2">
           <UserPlusIcon className="size-4" />
-          Novo Usuário
+          New User
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Criar Novo Usuário</DialogTitle>
+          <DialogTitle>Create New User</DialogTitle>
           <DialogDescription>
-            Preencha os campos abaixo para criar um novo usuário.
+            Fill in the fields below to create a new user.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
           <FieldGroup className="py-4">
             <Field>
-              <FieldLabel htmlFor="name">Nome</FieldLabel>
+              <FieldLabel htmlFor="username">Username</FieldLabel>
               <Input
-                id="name"
-                placeholder="Digite o nome do usuário"
+                id="username"
+                placeholder="Enter the username"
                 value={formData.username}
                 onChange={(e) =>
                   setFormData({ ...formData, username: e.target.value })
@@ -77,11 +77,11 @@ export function CreateUserDialog() {
               />
             </Field>
             <Field>
-              <FieldLabel htmlFor="email">E-mail</FieldLabel>
+              <FieldLabel htmlFor="email">Email</FieldLabel>
               <Input
                 id="email"
                 type="email"
-                placeholder="usuario@exemplo.com"
+                placeholder="user@example.com"
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
@@ -90,11 +90,11 @@ export function CreateUserDialog() {
               />
             </Field>
             <Field>
-              <FieldLabel htmlFor="password">Senha</FieldLabel>
+              <FieldLabel htmlFor="password">Password</FieldLabel>
               <Input
                 id="password"
                 type="password"
-                placeholder="Digite uma senha segura"
+                placeholder="Enter a secure password"
                 value={formData.password}
                 onChange={(e) =>
                   setFormData({ ...formData, password: e.target.value })
@@ -107,10 +107,10 @@ export function CreateUserDialog() {
           {lastCreatedUser && (
             <div className="mb-4 rounded-md border border-success/30 bg-success/10 p-3 text-sm">
               <p className="text-success">
-                Usuário <strong>{lastCreatedUser.username}</strong> criado com sucesso!
+                User <strong>{lastCreatedUser.username}</strong> created successfully!
               </p>
               <p className="mt-1 text-muted-foreground">
-                ID do usuário: <strong>{lastCreatedUser.id}</strong>
+                User ID: <strong>{lastCreatedUser.id}</strong>
               </p>
             </div>
           )}
@@ -124,16 +124,16 @@ export function CreateUserDialog() {
                 setLastCreatedUser(null)
               }}
             >
-              Fechar
+              Close
             </Button>
             <Button type="submit" disabled={!isValid || isSubmitting}>
               {isSubmitting ? (
                 <>
                   <Spinner className="size-4" />
-                  Criando...
+                  Creating...
                 </>
               ) : (
-                'Criar Usuário'
+                'Create User'
               )}
             </Button>
           </DialogFooter>

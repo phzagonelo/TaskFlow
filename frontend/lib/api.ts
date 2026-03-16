@@ -23,7 +23,7 @@ export async function login(data: LoginData): Promise<LoginResponse> {
   })
 
   if (!response.ok) {
-    throw new Error('E-mail ou senha inválidos')
+    throw new Error('Invalid email or password')
   }
 
   return response.json()
@@ -39,7 +39,7 @@ export async function createUser(data: CreateUserData): Promise<User> {
   })
 
   if (!response.ok) {
-    throw new Error('Falha ao criar usuário')
+    throw new Error('Failed to create user')
   }
 
   return response.json()
@@ -53,7 +53,7 @@ export async function createTask(data: CreateTaskData): Promise<Task> {
   })
 
   if (!response.ok) {
-    throw new Error('Falha ao criar tarefa')
+    throw new Error('Failed to create task')
   }
 
   return response.json()
@@ -66,7 +66,7 @@ export async function getTasks(): Promise<Task[]> {
   })
 
   if (!response.ok) {
-    throw new Error('Falha ao buscar tarefas')
+    throw new Error('Failed to fetch tasks')
   }
 
   return response.json()
@@ -80,7 +80,7 @@ export async function updateTaskStatus(taskId: number, status: 'in_progress' | '
   })
 
   if (!response.ok) {
-    throw new Error('Falha ao atualizar status da tarefa')
+    throw new Error('Failed to update task status')
   }
 
   return response.json()

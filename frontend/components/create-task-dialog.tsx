@@ -58,23 +58,23 @@ export function CreateTaskDialog({ onTaskCreated }: CreateTaskDialogProps) {
       <DialogTrigger asChild>
         <Button className="gap-2">
           <PlusIcon className="size-4" />
-          Nova Tarefa
+          New Task
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Criar Nova Tarefa</DialogTitle>
+          <DialogTitle>Create New Task</DialogTitle>
           <DialogDescription>
-            Preencha os campos abaixo para criar uma nova tarefa.
+            Fill in the fields below to create a new task.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
           <FieldGroup className="py-4">
             <Field>
-              <FieldLabel htmlFor="title">Título</FieldLabel>
+              <FieldLabel htmlFor="title">Title</FieldLabel>
               <Input
                 id="title"
-                placeholder="Digite o título da tarefa"
+                placeholder="Enter the task title"
                 value={formData.title}
                 onChange={(e) =>
                   setFormData({ ...formData, title: e.target.value })
@@ -83,10 +83,10 @@ export function CreateTaskDialog({ onTaskCreated }: CreateTaskDialogProps) {
               />
             </Field>
             <Field>
-              <FieldLabel htmlFor="description">Descrição</FieldLabel>
+              <FieldLabel htmlFor="description">Description</FieldLabel>
               <Textarea
                 id="description"
-                placeholder="Descreva a tarefa (opcional)"
+                placeholder="Describe the task (optional)"
                 value={formData.description}
                 onChange={(e) =>
                   setFormData({ ...formData, description: e.target.value })
@@ -95,7 +95,7 @@ export function CreateTaskDialog({ onTaskCreated }: CreateTaskDialogProps) {
               />
             </Field>
             <Field>
-              <FieldLabel htmlFor="deadline">Prazo</FieldLabel>
+              <FieldLabel htmlFor="deadline">Deadline</FieldLabel>
               <Input
                 id="deadline"
                 type="date"
@@ -113,16 +113,16 @@ export function CreateTaskDialog({ onTaskCreated }: CreateTaskDialogProps) {
               variant="outline"
               onClick={() => setOpen(false)}
             >
-              Cancelar
+              Cancel
             </Button>
             <Button type="submit" disabled={!isValid || isSubmitting}>
               {isSubmitting ? (
                 <>
                   <Spinner className="size-4" />
-                  Criando...
+                  Creating...
                 </>
               ) : (
-                'Criar Tarefa'
+                'Create Task'
               )}
             </Button>
           </DialogFooter>

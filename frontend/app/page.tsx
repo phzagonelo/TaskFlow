@@ -46,11 +46,11 @@ export default function TaskManagementPage() {
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
         <div className="mb-8">
           <h1 className="text-balance text-3xl font-bold tracking-tight">
-            Gestão de Tarefas
+            Task Management
           </h1>
           <p className="mt-2 text-pretty text-muted-foreground">
-            Gerencie suas tarefas de forma eficiente. Crie, visualize e filtre
-            suas atividades.
+            Manage your tasks efficiently. Create, view, and filter your
+            activities.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function TaskManagementPage() {
             className="gap-2"
           >
             <RefreshCwIcon className="size-4" />
-            Atualizar
+            Refresh
           </Button>
         </div>
 
@@ -81,8 +81,8 @@ export default function TaskManagementPage() {
       <footer className="border-t border-border/50 py-6">
         <div className="mx-auto max-w-6xl px-4 text-center text-sm text-muted-foreground sm:px-6">
           <p>
-            TaskFlow &copy; {new Date().getFullYear()} &mdash; Sistema de Gestão
-            de Tarefas
+            TaskFlow &copy; {new Date().getFullYear()} &mdash; Task Management
+            System
           </p>
         </div>
       </footer>

@@ -27,19 +27,19 @@ export function TaskFilters({
 }: TaskFiltersProps) {
   return (
     <div className="flex items-center gap-3">
-      <span className="text-sm text-muted-foreground">Filtrar por:</span>
+      <span className="text-sm text-muted-foreground">Filter by:</span>
       <Select value={filter} onValueChange={onFilterChange}>
         <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Selecione o status" />
+          <SelectValue placeholder="Select status" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">Todas ({taskCounts.all})</SelectItem>
-          <SelectItem value="pending">Pendentes ({taskCounts.pending})</SelectItem>
+          <SelectItem value="all">All ({taskCounts.all})</SelectItem>
+          <SelectItem value="pending">Pending ({taskCounts.pending})</SelectItem>
           <SelectItem value="in_progress">
-            Em Progresso ({taskCounts.in_progress})
+            In Progress ({taskCounts.in_progress})
           </SelectItem>
           <SelectItem value="completed">
-            Concluídas ({taskCounts.completed})
+            Completed ({taskCounts.completed})
           </SelectItem>
         </SelectContent>
       </Select>

@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'TaskFlow - Gestão de Tarefas',
-  description: 'Sistema de gestão de tarefas moderno e eficiente',
+  title: 'TaskFlow - Task Management',
+  description: 'Modern and efficient task management system',
   generator: 'v0.app',
   icons: {
     icon: [

@@ -16,15 +16,15 @@ interface TaskCardProps {
 
 const statusConfig = {
   pending: {
-    label: 'Pendente',
+    label: 'Pending',
     className: 'bg-warning/20 text-warning border-warning/30',
   },
   in_progress: {
-    label: 'Em Progresso',
+    label: 'In Progress',
     className: 'bg-info/20 text-info border-info/30',
   },
   completed: {
-    label: 'Concluída',
+    label: 'Completed',
     className: 'bg-success/20 text-success border-success/30',
   },
 }
@@ -34,7 +34,7 @@ export function TaskCard({ task, onStatusChange }: TaskCardProps) {
   const status = statusConfig[task.status]
   const deadline = new Date(task.deadline)
   const isOverdue = deadline < new Date() && task.status !== 'completed'
-  const formattedDate = deadline.toLocaleDateString('pt-BR', {
+  const formattedDate = deadline.toLocaleDateString('en-US', {
     day: '2-digit',
     month: 'short',
     year: 'numeric',
@@ -46,7 +46,7 @@ export function TaskCard({ task, onStatusChange }: TaskCardProps) {
       await updateTaskStatus(task.id, 'in_progress')
       onStatusChange?.()
     } catch (error) {
-      console.error('Erro ao iniciar tarefa:', error)
+      console.error('Error starting task:', error)
     } finally {
       setIsUpdating(false)
     }
@@ -58,7 +58,7 @@ export function TaskCard({ task, onStatusChange }: TaskCardProps) {
       await updateTaskStatus(task.id, 'completed')
       onStatusChange?.()
     } catch (error) {
-      console.error('Erro ao finalizar tarefa:', error)
+      console.error('Error completing task:', error)
     } finally {
       setIsUpdating(false)
     }
@@ -90,7 +90,7 @@ export function TaskCard({ task, onStatusChange }: TaskCardProps) {
             <span>{formattedDate}</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="text-muted-foreground/70">ID Usuário:</span>
+            <span className="text-muted-foreground/70">User ID:</span>
             <span>{task.user_id}</span>
           </div>
         </div>
@@ -106,7 +106,7 @@ export function TaskCard({ task, onStatusChange }: TaskCardProps) {
                 className="h-8 flex-1 gap-2 border-info/30 text-info hover:border-info hover:bg-info/10 hover:text-info"
               >
                 {isUpdating ? <Spinner className="size-3.5" /> : <PlayIcon className="size-3.5" />}
-                Iniciar tarefa
+                Start Task
               </Button>
             )}
             {task.status === 'in_progress' && (
@@ -117,7 +117,7 @@ export function TaskCard({ task, onStatusChange }: TaskCardProps) {
                 className="h-8 flex-1 gap-2 bg-success/20 text-success hover:bg-success/30"
               >
                 {isUpdating ? <Spinner className="size-3.5" /> : <CheckIcon className="size-3.5" />}
-                Finalizar tarefa
+                Complete Task
               </Button>
             )}
           </div>

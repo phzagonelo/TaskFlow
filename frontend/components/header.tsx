@@ -31,9 +31,9 @@ export function Header({ onTaskCreated }: HeaderProps) {
           )}
           <CreateUserDialog />
           <CreateTaskDialog onTaskCreated={onTaskCreated} />
-          <Button variant="ghost" size="icon" onClick={logout} title="Sair">
+          <Button variant="ghost" size="icon" onClick={logout} title="Logout">
             <LogOutIcon className="size-4" />
-            <span className="sr-only">Sair</span>
+            <span className="sr-only">Logout</span>
           </Button>
         </div>
       </div>
