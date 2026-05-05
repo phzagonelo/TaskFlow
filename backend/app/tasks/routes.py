@@ -79,3 +79,14 @@ def update_status(task_id):
     db.session.commit()
 
     return jsonify(task.to_dict()), 200
+
+@tasks_bp.route("/<int:task_id>/delete", methods=["DELETE"])
+def delete_task(task_id):
+    user_id = int(get_jwt_identity())
+
+    task = Task.query.filter_by(id = task_id,user_id = user_id).first()
+
+    db.session.delete(task)
+    db.session.commit()
+
+    return jsonify({"message": "task deleted"}), 200
